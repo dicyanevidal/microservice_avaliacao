@@ -13,6 +13,4 @@ import java.util.List;
 @Transactional
 public interface ContaRepository extends JpaRepository<Conta, Long> {
 
-    @Override
-    List<Conta> findAll();
 }

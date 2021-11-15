@@ -11,12 +11,11 @@ import java.io.Serializable;
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Conta")
+@Table(name = "CONTA")
 public class Conta implements Serializable {
     private static final long serialVersionUID = 3867851376759979506L;
 
     @Id
-    @Column(name = "Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
