@@ -28,7 +28,7 @@ public class ContaService {
         return contaRepository.save(conta);
     }
 
-    @Transactional
+
     public void movimentarSaldo(Long id, OperacaoSaldo operacao, Double quantia){
         Conta conta = contaRepository.findById(id).get();
         conta.setSaldo(operacao.executarOperacao(conta.getSaldo(), quantia));
@@ -43,6 +43,17 @@ public class ContaService {
                 return new Deposito();
             default:
                 throw new RuntimeException("Não foi possível realizar a operação.");
+        }
+    }
+
+    public static String nomeOperacao(Integer tipoOperacao) {
+        switch (tipoOperacao){
+            case 1:
+                return "SAQUE";
+            case 2:
+                return "DEPOSITO";
+            default:
+                throw new RuntimeException("Não foi possível encontrar a operação.");
         }
     }
 }

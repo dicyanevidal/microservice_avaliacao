@@ -10,7 +10,6 @@ import vidal.dicyane.conta.model.Conta;
 import java.util.List;
 
 @Repository
-@Transactional
 public interface ContaRepository extends JpaRepository<Conta, Long> {
 
 }

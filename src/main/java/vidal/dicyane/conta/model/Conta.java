@@ -4,14 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import vidal.dicyane.conta.interfaces.CartaoFeign;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Getter @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@EnableSwagger2
 @Table(name = "CONTA")
+@NoArgsConstructor @AllArgsConstructor
 public class Conta implements Serializable {
     private static final long serialVersionUID = 3867851376759979506L;
 
@@ -26,5 +29,10 @@ public class Conta implements Serializable {
     private String tipo;
 
     @Column
-    private Boolean flagAtivo;
+    private Boolean contaAtiva;
+
+    @Column
+    private String conta;
+
+
 }
